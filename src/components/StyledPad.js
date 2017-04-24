@@ -1,53 +1,58 @@
-import styled , { keyframes, css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import sample from 'lodash.sample'
-import polished from 'polished'
+import { darken } from 'polished'
 import PropTypes from 'prop-types'
-import {background} from '../config/styles'
-
-const colors = {
-  0: '#002635',
-  1: '#013440',
-  2: '#AB1A25',
-  3: '#D97925',
-  4: '#EFE7BE'
-}
-const colors2 =["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b", "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7", "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"]
-
-
-
+import { background } from '../config/styles'
 
 const StyledPad = styled.div`
-${(props) => {
-if (props.isPlaying) {
-  // Returning a template literal with interpolations? You need to use `css`
-  return css`
-    background: ${sample(colors2)}
-    transition: background 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)  ;
-  `;
-} else {
-  // Returning a standard string? No need to use `css`
-  return css`
-    background: ${colors[0]}
-    opacity: ${ props => props.isActive ? '0.8': '1' }
-  `;
-}
+${props => {
+  switch (props.state) {
+    case 'playing':
+      return css`
+    background: ${sample(background.playing)};
+    transition: background ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  `
+    case 'idle':
+      return css`
+    background: ${background.idle};
+    transition: background ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+`
+    case 'selected':
+      return css`
+     background: ${darken(0.02, background.idle)};
+     transition: background ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     `
+    default:
+      return css`
+    background: ${background.idle};
+   `
+  }
 }};
-width: 8vh;
-max-width: 12.5%;
-height: 8vh;
+width:  ${props => props.width};
+max-width: ${props => props.maxwidth};
+height: ${props => props.height};
 cursor: pointer;
 &:hover {
-  background-color: ${sample(colors)}
+  background: ${darken(0.01, background.idle)};
   }
   `
-  StyledPad.defaultProps = {
-    colors:colors2,
-    background: 'default'
-  };
-
 
 StyledPad.propTypes = {
-  isPlaying: PropTypes.bool,
-  isActive: PropTypes.bool
+  state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,
+  onClick: PropTypes.func.isRequired,
+  width: PropTypes.string,
+  maxwidth: PropTypes.string,
+  height: PropTypes.string,
+  timing: PropTypes.string,
 }
+
+
+StyledPad.defaultProps = {
+  width: '8vh',
+  maxwidth: '12.5%',
+  height: '8vh',
+  timing: '1s' ,
+}
+
 export default StyledPad

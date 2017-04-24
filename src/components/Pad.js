@@ -1,8 +1,6 @@
-import { observer, inject } from 'mobx-react'
-import {observable, action, autorun} from 'mobx'
+import { observer, inject, PropTypes as mobxPropTypes } from 'mobx-react'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import sample from 'lodash.sample'
 import StyledPad from './StyledPad'
 
 
@@ -27,15 +25,9 @@ class Pad extends Component {
 
   render () {
     const actualPad = this.props.mainStore.pads.find(this.findPad)
-    let test = this.props.mainStore.isRunning
-
-
-
-
     return (
       <StyledPad onClick={this.handleClick}
-        isPlaying={actualPad.isPlaying}
-        isActive={actualPad.isSelected}
+        state={actualPad.state}
        />
     )
   }
@@ -43,7 +35,16 @@ class Pad extends Component {
 
 Pad.propTypes = {
   id: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired
-}
+  pad:PropTypes.object.isRequired,
+  }
+
+Pad.wrappedComponent.propTypes = {
+  mainStore:  PropTypes.shape({
+    pads: mobxPropTypes.observableArrayOf(PropTypes.object),
+    toggleLoopState: PropTypes.func,
+    initStore: PropTypes.func,
+  }).isRequired
+  }
+
 
 export default Pad

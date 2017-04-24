@@ -1,6 +1,9 @@
 import { observable, action, computed } from 'mobx'
 import uuid from 'uuid'
 
+
+
+
 export class SequencerStore {
   @observable
   pads = [];
@@ -48,6 +51,7 @@ export class SequencerStore {
   }
 }
 
+
 export class Pad {
   @observable
   isSelected = false;
@@ -74,11 +78,23 @@ export class Pad {
     this.isPlaying = !this.isPlaying
   }
 
+  @computed
+  get state(){
+    const state =
+    !this.isSelected?
+    'idle':
+    this.isPlaying?
+    'playing':
+    'selected'
+  return state
+  }
+
   pling (duration) {
     this.togglePlaying()
     setTimeout(this.togglePlaying, duration)
   }
 }
+
 
 const singleton = new SequencerStore()
 

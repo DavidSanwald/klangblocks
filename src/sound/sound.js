@@ -14,7 +14,7 @@ const chorus = new Tone.Chorus({
 
 const pingPong = new Tone.PingPongDelay('4n+8n', 0.1)
 
-pingPong.wet.value = 0.1
+pingPong.wet.value = 0.2
 
 const comp = new Tone.Compressor({
   ratio: 10,
@@ -54,7 +54,7 @@ function buildLoop (instrument, store) {
 
       Tone.Draw.schedule(
         function () {
-          const duration = Tone.Time('4n').toMilliseconds()
+          const duration = Tone.Time('1n').toMilliseconds()
           playingPads.forEach(pad => pad.pling(duration))
         },
         time
@@ -67,11 +67,8 @@ function buildLoop (instrument, store) {
 }
 
 
-
-console.log(store)
-
 export const loop = buildLoop(instrument, store)
 
-const toggler = autorun(() => {
+autorun(() => {
     store.isRunning? loop.start(): loop.stop()
 })

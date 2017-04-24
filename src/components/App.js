@@ -1,23 +1,14 @@
 import React, { Component } from 'react'
 import Tone from 'tone'
-import DevTools from 'mobx-react-devtools'
 import { useStrict, action } from 'mobx'
 import { Provider, observer} from 'mobx-react'
 import store from '../stores/SequencerStore'
 import Sequencer from './Sequencer'
-import styled from 'styled-components'
+import { MainWrapper } from './layouts'
 import { loop } from '../sound/sound'
 
-const MainWrapper = styled.div`
-max-width: 100vw;
-width: 64vh;
-height: 100vh;
-margin:0 auto;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-`
+
+
 
 useStrict(true)
 
@@ -50,13 +41,13 @@ class App extends Component {
         this.store.initStore()
         break
       default:
-        null
+
     }
   }
   render () {
 
     return (
-      <Provider mainStore={store} playingState={this.playingState}>
+      <Provider mainStore={store}>
         <MainWrapper>
           <Sequencer />
         </MainWrapper>
