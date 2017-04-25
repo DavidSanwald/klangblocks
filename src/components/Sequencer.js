@@ -10,9 +10,13 @@ import {SequencerBoard} from './layouts'
 class Sequencer extends Component {
   render () {
     return (
-      <SequencerBoard>
+
+        <svg width='100%'
+           height='100%' viewBox="0 0 80 90"  >
         {this.props.mainStore.pads.map(x => <Pad pad={x} key={x.id} id={x.id} />)}
-      </SequencerBoard>
+      </svg>
+
+
     )
   }
 }

@@ -1,58 +1,74 @@
 import styled, { css } from 'styled-components'
+import React from 'react'
 import sample from 'lodash.sample'
 import { darken } from 'polished'
 import PropTypes from 'prop-types'
 import { background } from '../config/styles'
 
-const StyledPad = styled.div`
+
+const StyledPad = (props) => (
+  <StyledSquare {...props}
+      width="10"
+      height="10"
+      x={props.n*10}
+      y={props.m*10}
+      state={props.state}
+
+      onClick={props.onClick}
+    />
+);
+
+const StyledSquare = styled.rect`
+      cursor: pointer;
 ${props => {
   switch (props.state) {
     case 'playing':
       return css`
-    background: ${sample(background.playing)};
-    transition: background ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    fill: ${sample(background.playing)};
+    transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
   `
     case 'idle':
       return css`
-    background: ${background.idle};
-    transition: background ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    fill: ${background.idle};
+    transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 `
     case 'selected':
       return css`
-     background: ${darken(0.02, background.idle)};
-     transition: background ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     fill: ${darken(0.02, background.idle)};
+     transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
      `
     default:
       return css`
-    background: ${background.idle};
-   `
+      fill: ${background.idle};
+     `
+    }
+  }};
+  width:  ${props => props.width};
+  max-width: ${props => props.maxwidth};
+  height: ${props => props.height};
+  cursor: pointer;
+  &:hover {
+    background: ${darken(0.01, background.idle)};
+    }
+    `
+  StyledSquare.propTypes = {
+    state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,
+    onClick: PropTypes.func.isRequired,
+    width: PropTypes.string,
+    maxwidth: PropTypes.string,
+    height: PropTypes.string,
+    timing: PropTypes.string,
   }
-}};
-width:  ${props => props.width};
-max-width: ${props => props.maxwidth};
-height: ${props => props.height};
-cursor: pointer;
-&:hover {
-  background: ${darken(0.01, background.idle)};
+
+
+  StyledSquare.defaultProps = {
+    width: '8vh',
+    maxwidth: '12.5%',
+    height: '8vh',
+    timing: '0.5s' ,
   }
-  `
-
-StyledPad.propTypes = {
-  state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,
-  onClick: PropTypes.func.isRequired,
-  width: PropTypes.string,
-  maxwidth: PropTypes.string,
-  height: PropTypes.string,
-  timing: PropTypes.string,
-}
 
 
-StyledPad.defaultProps = {
-  width: '8vh',
-  maxwidth: '12.5%',
-  height: '8vh',
-  timing: '1s' ,
-}
 
 export default StyledPad
