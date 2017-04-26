@@ -2,7 +2,48 @@ import { observable, action, computed } from 'mobx'
 import uuid from 'uuid'
 
 
+export class Pad {
+  @observable
+  isSelected = false;
+  @observable
+  isPlaying = false;
+  id = null;
+  store = null;
 
+
+  constructor (m, n, store, id = uuid.v4()) {
+    this.store = store
+    this.id = id
+    this.m = m
+    this.n = n
+  }
+
+  @action.bound
+  toggleSelected () {
+    this.isSelected = !this.isSelected
+  }
+
+  @action.bound
+  togglePlaying () {
+    this.isPlaying = !this.isPlaying
+  }
+
+  @computed
+  get state(){
+    const state =
+    !this.isSelected?
+    'idle':
+    this.isPlaying?
+    'playing':
+    'selected'
+  return state
+  }
+
+  pling (duration) {
+    this.togglePlaying()
+    setTimeout(this.togglePlaying, duration)
+  }
+}
 
 export class SequencerStore {
   @observable
@@ -52,48 +93,7 @@ export class SequencerStore {
 }
 
 
-export class Pad {
-  @observable
-  isSelected = false;
-  @observable
-  isPlaying = false;
-  id = null;
-  store = null;
 
-
-  constructor (m, n, store, id = uuid.v4()) {
-    this.store = store
-    this.id = id
-    this.m = m
-    this.n = n
-  }
-
-  @action.bound
-  toggleSelected () {
-    this.isSelected = !this.isSelected
-  }
-
-  @action.bound
-  togglePlaying () {
-    this.isPlaying = !this.isPlaying
-  }
-
-  @computed
-  get state(){
-    const state =
-    !this.isSelected?
-    'idle':
-    this.isPlaying?
-    'playing':
-    'selected'
-  return state
-  }
-
-  pling (duration) {
-    this.togglePlaying()
-    setTimeout(this.togglePlaying, duration)
-  }
-}
 
 
 const singleton = new SequencerStore()
