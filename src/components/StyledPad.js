@@ -8,18 +8,21 @@ import { background } from '../config/styles'
 
 const StyledPad = (props) => (
   <StyledSquare {...props}
-      width="10"
-      height="10"
+      width="11"
+      height="11"
       x={props.n*10}
       y={props.m*10}
       state={props.state}
-
+       shape-rendering="geometricPrecision"
       onClick={props.onClick}
     />
 );
 
 const StyledSquare = styled.rect`
-      cursor: pointer;
+&:hover {
+  fill: ${darken(0.01, background.idle)};
+}
+  cursor: pointer;
 ${props => {
   switch (props.state) {
     case 'playing':
@@ -44,13 +47,6 @@ ${props => {
      `
     }
   }};
-  width:  ${props => props.width};
-  max-width: ${props => props.maxwidth};
-  height: ${props => props.height};
-  cursor: pointer;
-  &:hover {
-    background: ${darken(0.01, background.idle)};
-    }
     `
   StyledSquare.propTypes = {
     state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,

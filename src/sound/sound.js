@@ -54,7 +54,7 @@ function buildLoop (instrument, store) {
 
       Tone.Draw.schedule(
         function () {
-          const duration = Tone.Time('1n').toMilliseconds()
+          const duration = Tone.Time('4n').toMilliseconds()
           playingPads.forEach(pad => pad.pling(duration))
         },
         time

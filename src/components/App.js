@@ -48,10 +48,10 @@ class App extends Component {
 
     return (
       <Provider mainStore={store}>
-
+        <MainWrapper>
           <Sequencer />
-
-      </Provider>
+       </MainWrapper>
+    </Provider>
     )
   }
 }

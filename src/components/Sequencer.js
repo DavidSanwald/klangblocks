@@ -5,14 +5,15 @@ import PropTypes from 'prop-types'
 import {SequencerBoard} from './layouts'
 
 
+
 @inject('mainStore')
 @observer
 class Sequencer extends Component {
   render () {
     return (
 
-        <svg width='100%'
-           height='100%' viewBox="0 0 80 90"  >
+        <svg width='100vmin'
+           height='100vmin' viewBox="0 0 80 90" preserveAspectRatio="xMidYMid meet">
         {this.props.mainStore.pads.map(x => <Pad pad={x} key={x.id} id={x.id} />)}
       </svg>
 

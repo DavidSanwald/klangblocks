@@ -8,12 +8,12 @@ flex-wrap: wrap;
 height: 72vh;
 `
 export const MainWrapper = styled.div`
-max-width: 100vw;
-width: 64vh;
-height: 100vh;
-margin:0 auto;
+background: '#002635';
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
 display: flex;
-flex-direction: row;
-justify-content: center;
 align-items: center;
+justify-content: center;
 `
