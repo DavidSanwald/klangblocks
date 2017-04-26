@@ -8,8 +8,8 @@ import { background } from '../config/styles'
 
 const StyledPad = (props) => (
   <StyledSquare {...props}
-      width="11"
-      height="11"
+      width="10.3"
+      height="10.3"
       x={props.n*10}
       y={props.m*10}
       state={props.state}
@@ -19,9 +19,6 @@ const StyledPad = (props) => (
 );
 
 const StyledSquare = styled.rect`
-&:hover {
-  fill: ${darken(0.01, background.idle)};
-}
   cursor: pointer;
 ${props => {
   switch (props.state) {
@@ -47,6 +44,9 @@ ${props => {
      `
     }
   }};
+  &:hover {
+    opacity: 0.9
+  }
     `
   StyledSquare.propTypes = {
     state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,
