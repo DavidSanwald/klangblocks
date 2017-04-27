@@ -19,6 +19,9 @@ const StyledPad = (props) => (
 );
 
 const StyledSquare = styled.rect`
+&:hover {
+  opacity: 0.9
+};
   cursor: pointer;
 ${props => {
   switch (props.state) {
@@ -35,7 +38,7 @@ ${props => {
 `
     case 'selected':
       return css`
-     fill: ${darken(0.02, background.idle)};
+     fill: ${darken(0.01, background.idle)};
      transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
      `
     default:
@@ -44,9 +47,6 @@ ${props => {
      `
     }
   }};
-  &:hover {
-    opacity: 0.9
-  }
     `
   StyledSquare.propTypes = {
     state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,
@@ -62,7 +62,7 @@ ${props => {
     width: '8vh',
     maxwidth: '12.5%',
     height: '8vh',
-    timing: '0.5s' ,
+    timing: '2s' ,
   }
 
 

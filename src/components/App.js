@@ -2,15 +2,22 @@ import React, { Component } from 'react'
 import Tone from 'tone'
 import { useStrict, action } from 'mobx'
 import { Provider, observer} from 'mobx-react'
-import store from '../stores/SequencerStore'
+import Loop from '../stores/Loop'
 import Sequencer from './Sequencer'
 import { MainWrapper } from './layouts'
-import { loop } from '../sound/sound'
+
+
+const store = new Loop()
+Tone.Transport.start()
 
 
 
 
 useStrict(true)
+
+const SPACEBAR_KEY = 32;
+const BACKSPACE_KEY = 8;
+
 
 @observer
 class App extends Component {
@@ -20,9 +27,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    this.loop = loop
-    Tone.Transport.start()
-    store.toggleLoopState()
     document.addEventListener('keydown', this.handleKeyPress.bind(this))
   }
 
@@ -34,10 +38,10 @@ class App extends Component {
   handleKeyPress (e) {
     e.preventDefault()
     switch (e.keyCode) {
-      case 32:
+      case SPACEBAR_KEY:
         store.toggleLoopState()
         break
-      case 8:
+      case BACKSPACE_KEY:
         this.store.initStore()
         break
       default:

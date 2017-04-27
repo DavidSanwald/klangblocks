@@ -6,16 +6,9 @@ import StyledPad from '../StyledPad'
 expect.extend(matcher)
 expect.addSnapshotSerializer(serializer)
 
-// foo.js
-module.exports = function() {
-  // some implementation;
-};
-
 // test.js
 jest.mock('lodash.sample'); // this happens automatically with automocking
 const sample = require('lodash.sample');
-
-// foo is a mock function
 sample.mockImplementation((array) => array[0]);
 const spyOnClick = jest.fn();
 
