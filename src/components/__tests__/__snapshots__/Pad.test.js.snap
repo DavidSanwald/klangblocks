@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
+exports[`Pad renders without crashing 1`] = `
 <rect
-  className="dfpukv"
+  className="bmVkCM"
   height="10.3"
   onClick={[Function]}
   width="10.3"
-  x={NaN}
-  y={NaN}
+  x={10}
+  y={10}
 />
 `;

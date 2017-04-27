@@ -8,12 +8,12 @@ import { background } from '../config/styles'
 
 const StyledPad = (props) => (
   <StyledSquare {...props}
-      width="10.3"
-      height="10.3"
+      width={props.width}
+      height={props.height}
       x={props.n*10}
       y={props.m*10}
       state={props.state}
-       shape-rendering="geometricPrecision"
+      shape-rendering="geometricPrecision"
       onClick={props.onClick}
     />
 );
@@ -48,7 +48,7 @@ ${props => {
     }
   }};
     `
-  StyledSquare.propTypes = {
+  StyledPad.propTypes = {
     state: PropTypes.oneOf(['idle', 'playing', 'selected']).isRequired,
     onClick: PropTypes.func.isRequired,
     width: PropTypes.string,
@@ -59,10 +59,9 @@ ${props => {
 
 
   StyledSquare.defaultProps = {
-    width: '8vh',
-    maxwidth: '12.5%',
-    height: '8vh',
-    timing: '2s' ,
+    width: '10.3',
+    height: '10.3',
+    timing: '3s' ,
   }
 
 

@@ -15,6 +15,9 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "@kadira/react-storybook-decorator-centered": "^1.1.2",
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
@@ -69,8 +72,9 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "lint": "./node_modules/.bin/standard",
-    "lint-fix": "./node_modules/.bin/standard --fix"
-
+    "lint-fix": "./node_modules/.bin/standard --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "verbose": true,

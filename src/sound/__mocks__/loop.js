@@ -1,4 +1,3 @@
-
 /* eslint-disable no-unused-vars */
 const mockLog = jest.fn()
 const mockLoop = {
