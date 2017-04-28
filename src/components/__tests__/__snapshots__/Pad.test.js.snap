@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pad renders without crashing 1`] = `
+<rect
+  className="bmVkCM"
+  height="10.3"
+  onClick={[Function]}
+  width="10.3"
+  x={10}
+  y={10}
+/>
+`;
