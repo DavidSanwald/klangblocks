@@ -1,17 +1,29 @@
 import PadModel from '../PadModel'
 
-let pad = null
-beforeEach(() => {pad = new PadModel()})
 
-
-describe('A Pad can be playing or not also it can be selected or not', () => {
+describe('A pad represents one tone', () => {
 jest.useFakeTimers();
+let pad = null
+beforeAll(() => {pad = new PadModel(0,1)})
+describe('initialization', () => {
+  let pad = null
+  beforeAll(() => {pad = new PadModel(0,1)}
+)
 
-
-  it('got properly initialized with the init state as idle ', () => {
+  test('is instance of the right class ', () => {
     expect(pad).toBeInstanceOf(PadModel)
+  })
+  test('its initial state is "idle"', ()=>{
     expect(pad.state).toBe('idle')
   })
+  test('it has the right row and col/m and n property', ()=>{
+    expect(pad.m).toBe(0)
+    expect(pad.n).toBe(1)
+  })
+})
+describe('Interaction', () => {
+  let pad = null
+  beforeEach(() => {pad = new PadModel(0,1)})
   it('gets selected and can be toggled to playing now, toggle selection switches'+
   'back to idle', () => {
     expect(pad.state).toBe('idle')
@@ -20,6 +32,7 @@ jest.useFakeTimers();
     pad.togglePlaying()
     expect(pad.state).toBe('playing')
   })
+})
 
 describe('A Pad can be playing or not also it can be selected or not', () => {
   it('can toggle to selected, than be played and turns off after setTimeout', () => {

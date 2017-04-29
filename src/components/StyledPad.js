@@ -27,23 +27,23 @@ ${props => {
   switch (props.state) {
     case 'playing':
       return css`
-    fill: ${sample(background.playing)};
+    fill: ${props=>sample(props.background.playing)};
     transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
   `
     case 'idle':
       return css`
-    fill: ${background.idle};
+    fill: ${props=>props.background.idle};
     transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 `
     case 'selected':
       return css`
-     fill: ${darken(0.01, background.idle)};
+     fill: ${props=>darken(0.01, props.background.idle)};
      transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
      `
     default:
       return css`
-      fill: ${background.idle};
+      fill: ${props=>props.background.idle};
      `
     }
   }};
@@ -61,6 +61,7 @@ ${props => {
     width: '10.3',
     height: '10.3',
     timing: '3s' ,
+    background: background
   }
 
 

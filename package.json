@@ -15,6 +15,7 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.4.0",
     "@kadira/react-storybook-decorator-centered": "^1.1.2",
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-knobs": "^1.7.1",
@@ -57,6 +58,7 @@
     "promise": "7.1.1",
     "react-addons-test-utils": "^15.5.1",
     "react-dev-utils": "^0.5.2",
+    "react-storybook-addon-chapters": "^1.1.0",
     "react-test-renderer": "^15.5.4",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
