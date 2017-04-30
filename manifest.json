@@ -1,0 +1,21 @@
+{
+  "name": "KlangBlocks",
+  "short_name": "KlangBlocks",
+  "start_url": ".",
+  "display": "browser",
+  "background_color": "#002635",
+  "description": "Here to make you think about death and get sad and stuff.",
+  "icons": [{
+    "src": "icons/64.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  }, {
+    "src": "icons/128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
