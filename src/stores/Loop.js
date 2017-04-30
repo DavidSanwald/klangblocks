@@ -1,7 +1,7 @@
 import { observable, action, computed } from 'mobx'
 import uuid from 'uuid'
 import PadModel from './PadModel'
-import buildLoop from '../sound/loop'
+
 
 
 export default class Loop {
@@ -23,18 +23,26 @@ export default class Loop {
 
   @action
   toggleLoopState () {
-    this.loop.state === 'started'?
-    this.loop.stop():
-    this.loop.start()
+  //  this.loop.state === 'started'?
+  //  this.loop.stop():
+//    this.loop.start()
   }
 
   @action
   initStore (numberRows = 9, numberCols = 8) {
     this.pads = this.initPads(numberRows, numberCols)
-    this.loop = buildLoop(this)
+
+  }
+  @action
+  initLoop(){
+    require.ensure(['../sound/loop'], (require) => {
+  const Profile = require('../sound/loop.js').default
+  this.loop=Profile(this)
+console.log(this.loop)
+})
+
     this.toggleLoopState()
   }
-
   initPads (numberRows, numberCols) {
     const arr = []
     for (let n = 0; n < numberCols; n++) {

@@ -49,5 +49,7 @@ export default function buildLoop (store) {
     [ 0, 1, 2, 3, 4, 5, 6, 7 ],
     '8n'
   )
+  loop.start()
+  Tone.Transport.start()
   return loop
 }

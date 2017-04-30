@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Tone from 'tone'
 import { useStrict, action } from 'mobx'
 import { Provider, observer} from 'mobx-react'
 import Loop from '../stores/Loop'
@@ -7,7 +6,7 @@ import Sequencer from './Sequencer'
 import { MainWrapper } from './layouts'
 
 const store = new Loop()
-Tone.Transport.start()
+
 
 
 
@@ -27,6 +26,7 @@ class App extends Component {
 
   componentDidMount () {
     document.addEventListener('keydown', this.handleKeyPress.bind(this))
+    store.initLoop()
   }
 
   componentWillUnmount () {
