@@ -58,8 +58,8 @@ ${props => {
 
 
   StyledSquare.defaultProps = {
-    width: '10.3',
-    height: '10.3',
+    width: '10',
+    height: '10',
     timing: '3s' ,
     background: background
   }

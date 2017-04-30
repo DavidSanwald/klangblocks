@@ -1,4 +1,5 @@
 import PadModel from '../PadModel'
+import sinon from 'sinon'
 
 
 describe('A pad represents one tone', () => {
@@ -7,10 +8,19 @@ let pad = null
 beforeAll(() => {pad = new PadModel(0,1)})
 describe('initialization', () => {
   let pad = null
-  beforeAll(() => {pad = new PadModel(0,1)}
+  beforeAll(() => {
+    PadModel.mockImplementation(() => {
+      return {
+        state: ()=>'crazy'
+      }
+    pad = new PadModel(0,1)
+
+})
+}
 )
 
   test('is instance of the right class ', () => {
+        console.log(pad)
     expect(pad).toBeInstanceOf(PadModel)
   })
   test('its initial state is "idle"', ()=>{

@@ -30,7 +30,7 @@ export default function buildLoop (store) {
   })
   const pingPong = new Tone.PingPongDelay('4n+8n', 0.1)
   pingPong.wet.value = 0.2
-  const instrument = keys.chain(comp, pingPong, Tone.Master)
+  const instrument = keys.chain( pingPong, comp, Tone.Master)
   const loop = new Tone.Sequence(
     function (time, col) {
       const selectedPads = store.selectedPads

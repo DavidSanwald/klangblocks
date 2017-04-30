@@ -13,7 +13,9 @@
 <meta property="og:site_name" content="Here to make you think about death and get sad and stuff."/>
 <meta property="og:description" content="Here to make you think about death and get sad and stuff." />
 <meta property="og:type" content="website"  />
+ <meta name="theme-color" content="#002635">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,15 +29,22 @@
   </head>
   <body>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
+    <script>
+       if ('serviceWorker' in navigator) {
+         window.addEventListener('load', function() {
+           navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+             // Registration was successful
+             console.log('ServiceWorker registration successful with scope: ', registration.scope);
+           }, function(err) {
+             // registration failed :(
+             console.log('ServiceWorker registration failed: ', err);
+           }).catch(function(err) {
+             console.log(err)
+           });
+         });
+       } else {
+         console.log('service worker is not supported');
+       }
+     </script>
   </body>
 </html>

@@ -8,10 +8,10 @@ flex-wrap: wrap;
 height: 72vh;
 `
 export const MainWrapper = styled.div`
-background: '#002635';
-width: 100%;
-height: 100%;
-margin: 0;
+background: #002635;
+width: 88.8vmin;
+height: 100vmin;
+margin: 0 auto;
 padding: 0;
 display: flex;
 align-items: center;

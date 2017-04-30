@@ -5,7 +5,6 @@ import { Provider, observer} from 'mobx-react'
 import Loop from '../stores/Loop'
 import Sequencer from './Sequencer'
 import { MainWrapper } from './layouts'
-import Devtools from 'mobx-react-devtools'
 
 const store = new Loop()
 Tone.Transport.start()
@@ -53,7 +52,6 @@ class App extends Component {
     return (
       <Provider mainStore={store}>
         <MainWrapper>
-            <Devtools/>
           <Sequencer />
        </MainWrapper>
     </Provider>
