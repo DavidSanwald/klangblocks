@@ -3,6 +3,7 @@
   "short_name": "KlangBlocks",
   "start_url": ".",
   "display": "browser",
+  "theme_color": "#002635",
   "background_color": "#002635",
   "description": "Here to make you think about death and get sad and stuff.",
   "icons": [{
