@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:5/2/2017, 1:48:59 PM
+#ver:5/2/2017, 1:54:33 PM
 #plugin:4.7.0
 
 CACHE:
@@ -8,7 +8,7 @@ CACHE:
 /klangblocks/
 /klangblocks/asset-manifest.json
 /
-/klangblocks/audio/**.mp3
+/klangblocks/audio/*.mp3
 /klangblocks/
 /klangblocks/manifest.json
 
