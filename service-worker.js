@@ -39,7 +39,7 @@ self.addEventListener('install', function(event) {
               const urlsToCache = [
                 "/",
                 assets["main.js"],
-                ["audio/*.mp3"]
+                "/audio/*.mp3"
               ]
               cache.addAll(urlsToCache)
               console.log('cached');
