@@ -11,6 +11,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "styled-components": "^1.4.5",
+    "styled-theme": "^0.3.3",
     "tone": "^0.10.0",
     "uuid": "^3.0.1"
   },
@@ -54,6 +55,7 @@
     "json-loader": "0.5.4",
     "mobx-react-devtools": "^4.2.11",
     "object-assign": "4.1.1",
+    "offline-plugin": "^4.7.0",
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
     "react-addons-test-utils": "^15.5.1",

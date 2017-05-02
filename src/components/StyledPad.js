@@ -3,7 +3,6 @@ import React from 'react'
 import sample from 'lodash.sample'
 import { darken } from 'polished'
 import PropTypes from 'prop-types'
-import { background } from '../config/styles'
 
 
 const StyledPad = (props) => (
@@ -27,23 +26,23 @@ ${props => {
   switch (props.state) {
     case 'playing':
       return css`
-    fill: ${props=>sample(props.background.playing)};
+    fill: ${props=>sample(props.theme.background.playing)};
     transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
   `
     case 'idle':
       return css`
-    fill: ${props=>props.background.idle};
+    fill: ${props=>props.theme.background.idle};
     transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 `
     case 'selected':
       return css`
-     fill: ${props=>darken(0.01, props.background.idle)};
+     fill: ${props=>darken(0.01, props.theme.background.idle)};
      transition: fill ${props.timing} cubic-bezier(0.175, 0.885, 0.32, 1.275);
      `
     default:
       return css`
-      fill: ${props=>props.background.idle};
+      fill: ${props=>props.theme.background.idle};
      `
     }
   }};
@@ -60,9 +59,8 @@ ${props => {
   StyledSquare.defaultProps = {
     width: '10',
     height: '10',
-    timing: '3s' ,
-    background: background
-  }
+    timing: '0.5s' ,
+    background: '#002635'}
 
 
 

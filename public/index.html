@@ -28,23 +28,31 @@
     <title>React App</title>
   </head>
   <body>
+    <noscript>
+      <link rel="stylesheet" href="https://cdn.concisecss.com/concise.min.css">
+      <link rel="stylesheet" href="styles.css">
+      <main container>
+<section grid>
+    <div column="6"><img src="helloworld.jpg" heigth=1920 width=1080 alt="The author of this side holding a musical instrument partially covering his most likely awkward facial expression"></div>
+  <div column="6">
+      <h1>No JavaScript? Flaky Connection?</h1>
+
+  Hello it seems like there's no JavaScript activated or supported on your site. So you can't experience the interactive sound shenanigans and their colorful visualisation right now here in the browser.
+  But this is the most progressive web app of all, so this site can still provide you an amazing, interactive UX. Without JavaScript/Offline and all...
+  How?
+
+
+  Drop me a <a href="mailto:why.ever.not.berlin@gmail.com?subject=Making music and having a good time">note</a>, make us some tea and let's come up with a good way how I could get to you're place if you're not living in Berlin.
+  I will come to your place, bring my guitar (and if you want to also a Kalimba (an instrument you will be able to play right way, trust me!) so that we can start a jam session (:
+
+
+  Love
+
+  David
+  </div>
+</section>
+</main>
+  </noscript>
     <div id="root"></div>
-    <script>
-       if ('serviceWorker' in navigator) {
-         window.addEventListener('load', function() {
-           navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-             // Registration was successful
-             console.log('ServiceWorker registration successful with scope: ', registration.scope);
-           }, function(err) {
-             // registration failed :(
-             console.log('ServiceWorker registration failed: ', err);
-           }).catch(function(err) {
-             console.log(err)
-           });
-         });
-       } else {
-         console.log('service worker is not supported');
-       }
-     </script>
   </body>
 </html>

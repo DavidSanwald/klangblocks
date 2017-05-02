@@ -3,6 +3,8 @@ import Tone from 'tone'
 
 
 
+
+
 const instrumentConfig = {
   urls: {
     0: './audio/0.mp3',
@@ -18,6 +20,8 @@ const instrumentConfig = {
   volume: -7,
   fadeOut: 0.1
 }
+
+
 
 export default function buildLoop (store) {
   const keys = new Tone.MultiPlayer(instrumentConfig)

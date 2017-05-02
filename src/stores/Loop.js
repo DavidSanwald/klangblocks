@@ -23,9 +23,9 @@ export default class Loop {
 
   @action
   toggleLoopState () {
-  //  this.loop.state === 'started'?
-  //  this.loop.stop():
-//    this.loop.start()
+    this.loop.state === 'started'?
+    this.loop.stop():
+    this.loop.start()
   }
 
   @action
@@ -36,12 +36,11 @@ export default class Loop {
   @action
   initLoop(){
     require.ensure(['../sound/loop'], (require) => {
-  const Profile = require('../sound/loop.js').default
-  this.loop=Profile(this)
-console.log(this.loop)
-})
+  const buildLoop= require('../sound/loop.js').default
+  this.loop=buildLoop(this)
+}, 'peter')
 
-    this.toggleLoopState()
+
   }
   initPads (numberRows, numberCols) {
     const arr = []

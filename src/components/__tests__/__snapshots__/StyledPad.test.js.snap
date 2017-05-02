@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-.fqJubV {
+.rlkeg {
   cursor: pointer;
   fill: #67001f;
-  transition: fill 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: fill 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: fill 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: fill 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.fqJubV:hover {
+.rlkeg:hover {
   opacity: 0.9;
 }
 
 <rect
-  className="fqJubV"
-  height="10.3"
+  className="rlkeg"
+  height="10"
   onClick={[Function]}
-  width="10.3"
+  width="10"
   x={NaN}
   y={NaN}
 />
