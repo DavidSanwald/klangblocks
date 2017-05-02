@@ -248,9 +248,7 @@ module.exports = {
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
     }),
-    new OfflinePlugin({
-      externals: externalsUrls})
-  ],
+new OfflinePlugin({externals: externalsUrls})],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
