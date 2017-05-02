@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:5/2/2017, 1:12:13 PM
+#ver:5/2/2017, 1:24:05 PM
 #plugin:4.7.0
 
 CACHE:
@@ -7,6 +7,9 @@ CACHE:
 /klangblocks/static/js/peter.afe41d02.chunk.js
 /klangblocks/
 /klangblocks/asset-manifest.json
+/klangblocks/audio/*.mp3
+/klangblocks/
+/klangblocks/manifest.json
 
 NETWORK:
 *
