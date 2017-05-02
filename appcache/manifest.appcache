@@ -1,14 +1,21 @@
 CACHE MANIFEST
-#ver:5/2/2017, 1:58:06 PM
+#ver:5/2/2017, 2:05:16 PM
 #plugin:4.7.0
 
 CACHE:
-/klangblocks/static/js/main.f2a19e21.js
+/klangblocks/static/js/main.52de1f5a.js
 /klangblocks/static/js/peter.276097b9.chunk.js
 /klangblocks/
 /klangblocks/asset-manifest.json
+/klangblocks/audio/0.mp3
+/klangblocks/audio/1.mp3
+/klangblocks/audio/2.mp3
+/klangblocks/audio/3.mp3
+/klangblocks/audio/5.mp3
+/klangblocks/audio/6.mp3
+/klangblocks/audio/7.mp3
+/klangblocks/audio/8.mp3
 /
-/klangblocks/audio/*.mp3
 /klangblocks/
 /klangblocks/manifest.json
 
