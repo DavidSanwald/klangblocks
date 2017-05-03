@@ -5283,6 +5283,12 @@ react-simple-di@^1.2.0:
     babel-runtime "6.x.x"
     hoist-non-react-statics "1.x.x"
 
+react-storybook-addon-backgrounds@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-storybook-addon-backgrounds/-/react-storybook-addon-backgrounds-0.0.7.tgz#588348ef8d730c2d3da784aab2e3cdf8cc9103d0"
+  dependencies:
+    object-assign "^4.1.0"
+
 react-storybook-addon-chapters@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-storybook-addon-chapters/-/react-storybook-addon-chapters-1.1.0.tgz#2ebc13499a09745be02da424c34ce2fcfbce0e15"
@@ -5291,6 +5297,10 @@ react-storybook-addon-chapters@^1.1.0:
     babel-runtime "^6.5.0"
     markdown-to-react-components "^0.2.1"
     react-addons-create-fragment "^15.3.2"
+
+react-storybook@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-storybook/-/react-storybook-1.0.0.tgz#709f4b78db079bf50473f4308475214ab288c907"
 
 react-stubber@^1.0.0:
   version "1.0.0"

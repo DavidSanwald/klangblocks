@@ -27,7 +27,7 @@ class Pad extends Component {
     const actualPad = this.props.mainStore.pads.find(this.findPad)
     return (
       <StyledPad onClick={this.handleClick}
-        state={actualPad.state} m={actualPad.m} n={actualPad.n}
+        state={actualPad.state} m={actualPad.m} n={actualPad.n} 
        />
     )
   }

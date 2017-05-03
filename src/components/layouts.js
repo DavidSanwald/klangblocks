@@ -8,7 +8,7 @@ flex-wrap: wrap;
 height: 72vh;
 `
 export const MainWrapper = styled.div`
-background: #002635;
+background: ${props=>props.theme.background.idle};
 width: 88.8vmin;
 height: 100vmin;
 margin: 0 auto;

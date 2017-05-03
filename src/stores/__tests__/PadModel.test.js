@@ -1,26 +1,25 @@
 import PadModel from '../PadModel'
-import sinon from 'sinon'
+
+function createPad(state){
+  let pad = new PadModel(0,1)
+  Object.defineProperty(pad, 'state', {
+get: jest.fn(()=>state)
+})
+return pad}
 
 
 describe('A pad represents one tone', () => {
 jest.useFakeTimers();
 let pad = null
+
 beforeAll(() => {pad = new PadModel(0,1)})
 describe('initialization', () => {
-  let pad = null
   beforeAll(() => {
-    PadModel.mockImplementation(() => {
-      return {
-        state: ()=>'crazy'
-      }
-    pad = new PadModel(0,1)
-
+    pad = createPad('idle')
 })
-}
-)
+
 
   test('is instance of the right class ', () => {
-        console.log(pad)
     expect(pad).toBeInstanceOf(PadModel)
   })
   test('its initial state is "idle"', ()=>{

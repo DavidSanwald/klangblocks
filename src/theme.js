@@ -3,6 +3,8 @@ const playingColors2 = ['#67001f','#b2182b','#d6604d','#f4a582','#fddbc7','#f7f7
 const baseColor = '#002635'
 
 export default  {
+  background:{
   playing: playingColors2,
   idle: baseColor,
+}
 };

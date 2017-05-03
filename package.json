@@ -10,6 +10,7 @@
     "polished": "^1.0.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-storybook": "^1.0.0",
     "styled-components": "^1.4.5",
     "styled-theme": "^0.3.3",
     "tone": "^0.10.0",
@@ -60,6 +61,7 @@
     "promise": "7.1.1",
     "react-addons-test-utils": "^15.5.1",
     "react-dev-utils": "^0.5.2",
+    "react-storybook-addon-backgrounds": "^0.0.7",
     "react-storybook-addon-chapters": "^1.1.0",
     "react-test-renderer": "^15.5.4",
     "sinon": "^2.1.0",
@@ -79,7 +81,8 @@
     "lint": "./node_modules/.bin/standard",
     "lint-fix": "./node_modules/.bin/standard --fix",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "export-storybook": "build-storybook -c .storybook -o .out && cp .storybook/CNAME .out/CNAME && surge .out"
   },
   "jest": {
     "verbose": true,

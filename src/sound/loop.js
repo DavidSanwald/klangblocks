@@ -44,7 +44,7 @@ export default function buildLoop (store) {
       playingPads.forEach(pad => instrument.start(pad.m, time, 0, '1', 0))
       Tone.Draw.schedule(
         function () {
-          const duration = Tone.Time('2n').toMilliseconds()
+          const duration = Tone.Time('1m-0.5').toMilliseconds()
           playingPads.forEach(pad => pad.pling(duration))
         },
         time
