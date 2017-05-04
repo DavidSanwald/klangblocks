@@ -1,6 +1,5 @@
 {
   "name": "klangblocks",
-  "homepage": "https://davidsanwald.github.io/klangblocks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -68,6 +67,7 @@
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
+    "webpack-bundle-analyzer": "^2.4.0",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.2"
@@ -82,7 +82,8 @@
     "lint-fix": "./node_modules/.bin/standard --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "export-storybook": "build-storybook -c .storybook -o .out && cp .storybook/CNAME .out/CNAME && surge .out"
+    "export-storybook": "build-storybook -c .storybook -o .out && cp .storybook/CNAME .out/CNAME && surge .out",
+    "stats": "webpack --env production --profile --json > stats.json"
   },
   "jest": {
     "verbose": true,

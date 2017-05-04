@@ -1,8 +1,6 @@
-import { observable, action, computed } from 'mobx'
+import {observable, action, computed} from 'mobx'
 import uuid from 'uuid'
 import PadModel from './PadModel'
-
-
 
 export default class Loop {
   @observable
@@ -10,47 +8,46 @@ export default class Loop {
   @observable
   isRunning = false;
 
-  constructor (numberRows = 9, numberCols = 8, id = uuid.v4()) {
+  constructor(numberRows = 9, numberCols = 8, id = uuid.v4()) {
     this.id = id
     this.initStore()
   }
 
   @computed
-  get selectedPads () {
+  get selectedPads() {
     const selectedPads = this.pads.filter(pad => pad.isSelected === true)
     return selectedPads
   }
 
   @action
-  toggleLoopState () {
-    this.loop.state === 'started'?
-    this.loop.stop():
-    this.loop.start()
+  toggleLoopState() {
+    this.loop.state === 'started'
+      ? this.loop.stop()
+      : this.loop.start()
   }
 
   @action
-  initStore (numberRows = 9, numberCols = 8) {
+  initStore(numberRows = 9, numberCols = 8) {
     this.pads = this.initPads(numberRows, numberCols)
 
   }
   @action
-  initLoop(){
+  initLoop() {
     require.ensure(['../sound/loop'], (require) => {
-  const buildLoop= require('../sound/loop.js').default
-  this.loop=buildLoop(this)
-}, 'peter')
-
+      const buildLoop = require('../sound/loop.js').default
+      this.loop = buildLoop(this)
+    }, 'loop')
 
   }
-  initPads (numberRows, numberCols) {
+  initPads(numberRows, numberCols) {
     const arr = []
     for (let n = 0; n < numberCols; n++) {
       for (let m = 0; m < numberRows; m++) {
-        arr.push({ m, n })
+        arr.push({m, n})
       }
     }
-    const pads = arr.map(({ m, n }) => new PadModel(m, n, this))
-    pads.sort(function (a, b) {
+    const pads = arr.map(({m, n}) => new PadModel(m, n, this))
+    pads.sort(function(a, b) {
       let rowDifference = a.m - b.m
       if (rowDifference === 0) {
         const columnDifference = a.n - b.n

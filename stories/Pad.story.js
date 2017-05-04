@@ -3,13 +3,9 @@ import {storiesOf} from '@kadira/storybook';
 import {withKnobs, number, select, color} from '@kadira/storybook-addon-knobs';
 import {StyledPad} from './components'
 
-
-
-
 const stories = storiesOf('A Pad component')
 
-
-stories.addWithInfo('just a single isolated pad', () =>{
+stories.addWithInfo('just a single isolated pad', () => {
 
   const stateOptions = {
     playing: 'playing',
@@ -38,9 +34,11 @@ stories.addWithInfo('just a single isolated pad', () =>{
 
     </svg>
   )
-},
-{ header: true, inline: false, propTables: [StyledPad] }
-)
+}, {
+  header: true,
+  inline: false,
+  propTables: [StyledPad]
+})
 
 stories.add('pads in a matrix matrix', () => {
   function initPads(numberRows, numberCols) {
@@ -82,12 +80,12 @@ stories.add('pads in a matrix matrix', () => {
     }
   }
 
-
-
   const customPad = <StyledPad n={"6"} m={"3"} theme={theme} key={30} width={size.toString()} height={size.toString()} timing={timing.toString() + "ms"} state={singleState} onClick={() => null}/>
   const dummyPads = pads.map((x, index) => <StyledPad key={index} n={x.n} m={x.m} theme={theme} width={size.toString()} height={size.toString()} timing={timing.toString() + "ms"} state={manyState} onClick={() => null}/>)
   dummyPads.splice(30, 1, (customPad))
   return (
     <svg width='88.88vmin' height='100vmin' viewBox="0 0 80 90" preserveAspectRatio="xMidYMid meet">
       {dummyPads}
-    </svg>)})
+    </svg>
+  )
+})
