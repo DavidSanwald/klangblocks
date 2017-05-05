@@ -24,6 +24,7 @@ TODO
 
 
 *  ~~Making the app more progressive and getting it to work offline~~
+  ![https://github.com/DavidSanwald/klangblocks/blob/master/misc/94ScoreAfter.png](Ligthhouse Score After)
 
   https://medium.com/@davidsanwald/making-my-react-project-more-progressive-281a2e124720
 
