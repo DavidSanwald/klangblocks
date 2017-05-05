@@ -1,4 +1,5 @@
 'use strict';
+var OfflinePlugin = require('offline-plugin');
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -7,7 +8,6 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
-var OfflinePlugin = require('offline-plugin');
 var externalsUrls =  [
    './audio/0.mp3',
   './audio/1.mp3',
@@ -17,6 +17,7 @@ var externalsUrls =  [
  './audio/6.mp3',
  './audio/7.mp3',
 './audio/8.mp3',
+'/',
 'index.html',
 'manifest.json'
 ]
@@ -212,12 +213,8 @@ module.exports = {
     // See https://github.com/facebookincubator/create-react-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
     new OfflinePlugin({
-            publicPath: '/',
-      externals: externalsUrls,
-      ServiceWorker: {
-    navigateFallbackURL: '/'
-  }})
-  ],
+    externals: externalsUrls})
+],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {

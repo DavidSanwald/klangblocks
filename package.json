@@ -1,5 +1,6 @@
 {
   "name": "klangblocks",
+  "homepage": "https://davidsanwald.github.io/klangblocks/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
