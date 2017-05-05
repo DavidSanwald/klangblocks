@@ -24,6 +24,6 @@ TODO
 
 *  ~~Making the app more progressive and getting it to work offline~~
 
- https://medium.com/@davidsanwald/making-my-react-project-more-progressive-281a2e124720
+    https://medium.com/@davidsanwald/making-my-react-project-more-progressive-281a2e124720
 
 * ~~Remove store singleton to improve scalability and testability~~
