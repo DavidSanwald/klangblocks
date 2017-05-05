@@ -12,7 +12,8 @@ Sometimes I do unbelievable things even to the master, rebase, delete or complet
 
 TODO
 * Add some actual interface
-* Further improving offline capabilities
+* Further steps towards a real PWA
+  * utilizing app sheell structure to improve perceptual speed
 * Adding cooler not as simplistic Pad component, that uses SVG animations instead of not repaint safe CSS properties
 * Better isolation of individual unit tests
 * Changing store structure, so that multiple sequencers can be handled
@@ -24,6 +25,11 @@ TODO
 
 *  ~~Making the app more progressive and getting it to work offline~~
 
-    https://medium.com/@davidsanwald/making-my-react-project-more-progressive-281a2e124720
+  https://medium.com/@davidsanwald/making-my-react-project-more-progressive-281a2e124720
+
+  * ~~add service worker~~
+  * ~~app manifest, enabling the app to be added to the home screen~~
+  * ~~isolating the sound related code for lazy modlue loading and code splitting~~
+
 
 * ~~Remove store singleton to improve scalability and testability~~
